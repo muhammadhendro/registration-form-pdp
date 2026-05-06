@@ -6,6 +6,8 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 export async function POST(request) {
   try {
+    const companyName = 'PT Bussan Auto Finance';
+
     // Get client IP
     const forwarded = request.headers.get('x-forwarded-for');
     const ip = forwarded ? forwarded.split(',')[0] : 
@@ -88,7 +90,7 @@ export async function POST(request) {
       .from('pdp_advance_training_registration')
       .insert({
         full_name: formData.full_name?.trim(),
-        company_name: formData.company_name?.trim(),
+        company_name: companyName,
         division_role: formData.division_role?.trim(),
         email: formData.email?.trim().toLowerCase() || null,
         phone_number: formData.phone_number?.trim() || null

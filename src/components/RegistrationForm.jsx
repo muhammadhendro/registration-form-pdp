@@ -25,7 +25,6 @@ const InputField = ({ label, name, type = 'text', required = false, value, onCha
 export default function RegistrationForm() {
     const [formData, setFormData] = useState({
         full_name: '',
-        company_name: '',
         division_role: '',
         email: '',
         phone_number: ''
@@ -106,12 +105,6 @@ export default function RegistrationForm() {
             errors.full_name = 'Name contains invalid characters';
         }
 
-        if (!formData.company_name) {
-            errors.company_name = 'Perusahaan is required';
-        } else if (formData.company_name.length < 2) {
-            errors.company_name = 'Company name is too short';
-        }
-
         if (!formData.division_role) {
             errors.division_role = 'Divisi / Jabatan is required';
         }
@@ -169,7 +162,6 @@ export default function RegistrationForm() {
             setMessage({ type: 'success', text: '✨ Thank you! Your registration has been submitted successfully.' });
             setFormData({
                 full_name: '',
-                company_name: '',
                 division_role: '',
                 email: '',
                 phone_number: ''
@@ -231,12 +223,12 @@ export default function RegistrationForm() {
                     {/* Header */}
                     <div className="text-center mb-6 pb-4 border-b border-gray-600/50">
                         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                            Registration Form
+                            Form Registrasi Training
                         </h1>
                         <div className="text-left mt-6 text-gray-300 space-y-1 text-sm md:text-base border border-gray-600/50 bg-[#2B303E]/50 p-4 rounded-xl">
-                            <p><span className="font-semibold text-white inline-block w-32">Judul Training</span> : Advance Personal Data Protection Training</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Tanggal</span> : Jakarta, 7 April 2026</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Klien</span> : PT Perusahaan Gas Negara (Persero) Tbk</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Judul Training</span> : DPO Training</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Tanggal</span> : Jakarta, 5-6 Mei 2026</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Klien</span> : PT Bussan Auto Finance</p>
                         </div>
                     </div>
 
@@ -265,7 +257,7 @@ export default function RegistrationForm() {
                         <div className="space-y-6">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-8 bg-gradient-to-b from-ignite-green to-ignite-green/50 rounded-full"></div>
-                                <h2 className="text-xl font-bold text-white">Personal Information</h2>
+                                <h2 className="text-xl font-bold text-white">Data Peserta</h2>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -277,16 +269,6 @@ export default function RegistrationForm() {
                                     onChange={handleChange}
                                     isFocused={focusedField === 'full_name'}
                                     onFocus={() => setFocusedField('full_name')}
-                                    onBlur={() => setFocusedField(null)}
-                                />
-                                <InputField
-                                    label="Perusahaan"
-                                    name="company_name"
-                                    required
-                                    value={formData.company_name}
-                                    onChange={handleChange}
-                                    isFocused={focusedField === 'company_name'}
-                                    onFocus={() => setFocusedField('company_name')}
                                     onBlur={() => setFocusedField(null)}
                                 />
                                 <InputField
@@ -342,7 +324,7 @@ export default function RegistrationForm() {
                                 </span>
                             ) : (
                                 <span className="flex items-center justify-center gap-2">
-                                    Submit Registration
+                                    Kirim Registrasi
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>

@@ -226,9 +226,9 @@ export default function RegistrationForm() {
                             Form Registrasi Training
                         </h1>
                         <div className="text-left mt-6 text-gray-300 space-y-1 text-sm md:text-base border border-gray-600/50 bg-[#2B303E]/50 p-4 rounded-xl">
-                            <p><span className="font-semibold text-white inline-block w-32">Judul Training</span> : DPO Training</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Tanggal</span> : Jakarta, 5-6 Mei 2026</p>
-                            <p><span className="font-semibold text-white inline-block w-32">Klien</span> : PT Bussan Auto Finance</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Judul Training</span> : High Level Training - Perlindungan Data Pribadi (PDP) Implementation</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Tanggal</span> : Kamis, 25 Juni 2026</p>
+                            <p><span className="font-semibold text-white inline-block w-32">Klien</span> : PT Siloam International Hospitals</p>
                         </div>
                     </div>
 
@@ -262,7 +262,7 @@ export default function RegistrationForm() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <InputField
-                                    label="Nama Peserta"
+                                    label="Nama Peserta (Nama Lengkap)"
                                     name="full_name"
                                     required
                                     value={formData.full_name}
